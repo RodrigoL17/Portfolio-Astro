@@ -1,0 +1,36 @@
+---
+import { IconsPaths, ViewBoxes } from "./IconsPath";
+
+interface Props {
+  icon: keyof typeof IconsPaths;
+  fill?: string;
+  width?: string;
+  height?: string;
+  styles?: string;
+  title?: string;
+}
+
+const {
+  icon,
+  fill = "currentColor",
+  width = "32",
+  height = width,
+  styles,
+  title,
+}: Props = Astro.props;
+
+const iconPath = IconsPaths[icon];
+const viewBox = ViewBoxes[icon];
+---
+
+<div title={title}>
+  <svg
+    class={styles}
+    width={width}
+    height={height}
+    fill={fill}
+    viewBox={viewBox}
+  >
+    <g set:html={iconPath} />
+  </svg>
+</div>

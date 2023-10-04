@@ -1,0 +1,31 @@
+---
+interface Props {
+  href: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
+  styles?: string;
+  content?: string;
+  filename?: string;
+  ariaLabel?: string;
+  title?: string;
+}
+
+const { href, target, styles, content, filename, ariaLabel,title }: Props = Astro.props;
+---
+
+<a href={href} target={target} class={styles} download={filename ? filename : null} aria-label={ariaLabel} title={title}
+  >{
+    !content ? (
+      <>
+        <slot name="icon" />
+        <slot name="children" />
+        <slot name="iconR"/>
+      </>
+    ) : (
+      <>
+        <slot name="icon" /> <slot name="children" />
+        {content}
+        <slot name="iconR"/>
+      </>
+    )
+  }</a
+>
