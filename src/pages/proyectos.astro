@@ -3,7 +3,23 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Rodrigo Lezama - Proyectos">
-  <main class="min-h-screen bg-slate-300 grid place-content-center">
-    proyectos
+  <main class="py-14 px-20 min-h-screen flex flex-col gap-10">
+    <h1 class="text-white text-7xl font-bold">Proyectos</h1>
+    <section
+      class=" gap-4 border border-[#3993DD] p-4 rounded-lg overflow-y-auto"
+    >
+    <div id="card" class="relative transform transition-transform duration-700 ease-in-out">
+        <div  class="absolute h-full w-full bg-gradient-to-b from-black/80 via-black/30 to-white/20 z-10 rounded-lg">
+        </div>
+        <p class="absolute p-2 w-full z-10 text-white">Proyectoreact</p>
+        <img class="rounded-lg" src="/ecommerceReact.png" alt="" />
+      </div>
+      <div class="relative transform transition-transform duration-700 ease-in-out">
+        <div class="absolute h-full w-full bg-gradient-to-b from-black/80 via-black/30 to-white/20 z-10 rounded-lg">
+        </div>
+        <p class="absolute p-2 w-full z-10 text-white">Proyectoreact</p>
+        <img class="rounded-lg" src="/ecommerceReact.png" alt="" />
+      </div>
+    </section>
   </main>
 </Layout>

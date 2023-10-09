@@ -5,17 +5,17 @@ import TimeZone from "../components/TimeZone.astro";
 import Layout from "../layouts/Layout.astro";
 
 const commonStyles =
-  "bg-[#3993DD]/10 border border-[#3993DD] rounded-xl p-4 hover:border-[#FE9000]  transition-all ease-in-out duration-300 tablet:animate-fade-up tablet:animate-duration-[1000ms] tablet:animate-ease-in-out tablet:animate-fill-both";
+  "bg-[#3993DD]/10 border border-[#3993DD] rounded-xl p-4  hover:border-[#FE9000]  transition-all ease-in-out duration-300 tablet:animate-fade-up tablet:animate-duration-[1000ms] tablet:animate-ease-in-out tablet:animate-fill-both";
 const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hover:bg-[#51a1e2]/20 hover:border-[#FE9000] hover:text-[#FE9000] transition-all ease-in-out duration-300"  
 ---
 
 <Layout title="Rodrigo Lezama - Portfolio">
 <main
-    class="flex-col flex slaptop:grid slaptop:grid-cols-4 slaptop:grid-rows-4 max-slaptop:min-h-screen slaptop:h-screen min-w-screen desktop:py-10 desktop:px-10 p-6 gap-4 justify-center text-white tracking-wider"
+    class="flex-col flex slaptop:grid slaptop:grid-cols-4 slaptop:grid-rows-6 desktop:grid-rows-4 desktop:h-screen min-h-screen  min-w-screen  desktop:p-10  p-6 gap-4 justify-center text-white tracking-wider"
   >
     <section
       id="hero-section"
-      class={`slaptop:col-span-2 desktop:col-span-3 row-span-2 ${commonStyles} flex tablet:animate-delay-150`}
+      class={`slaptop:col-span-2 desktop:col-span-3 slaptop:row-span-2 ${commonStyles} flex tablet:animate-delay-150`}
     >
       <div class="flex flex-col gap-10 tablet:gap-20 flex-1 justify-between">
         <div class="font-thin">
@@ -60,7 +60,7 @@ const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hov
       <img id="avatar-img" class="max-desktop:hidden" src="/profile.webp" width="200" alt="Avatar picture" />
     </section>
     <section
-      class={`slaptop:col-span-2 slaptop:row-span-2 desktop:col-span-1 desktop:row-span-3 ${commonStyles} text-[0.825rem] slaptop:text-[0.8rem] desktop:text-[0.825rem] leading-[1.2rem] flex flex-col gap-4 font-thin tablet:animate-delay-300 `}
+      class={`slaptop:col-span-2 slaptop:row-span-3 desktop:col-span-1 desktop:row-span-3 ${commonStyles} text-sm slaptop:text-base desktop:text-xs xlscreens:text-sm xlscreens:leading-4 flex flex-col gap-4 font-thin tablet:animate-delay-300 `}
     >
       <h2 class="text-lg font-bold">Acerca de mi 👨‍💼</h2>
       <p>
@@ -89,7 +89,7 @@ const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hov
       </p>
     </section>
     <section
-      class={`slaptop:row-span-1 slaptop:col-span-2 desktop:col-span-1 desktop:row-span-2 flex flex-col gap-8 slaptop:gap-3 desktop:gap-8 ${commonStyles} tablet:animate-delay-500`}
+      class={`slaptop:row-span-2 slaptop:col-span-2 desktop:col-span-1 desktop:row-span-2 flex flex-col gap-8 slaptop:gap-3 desktop:gap-8 ${commonStyles} tablet:animate-delay-500`}
     >
       <h2 class="text-lg whitespace-pre-wrap">Construyamos un proyecto juntos! 🚀</h2>
       <div class="flex-col flex gap-2">
@@ -106,8 +106,8 @@ const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hov
     </section>
     <section class={`slaptop:row-span-1 slaptop:col-span-2 desktop:col-span-2 desktop:row-span-1 ${commonStyles} flex flex-col gap-4 tablet:animate-delay-700`}>
       <h2 class="text-lg">Proyectos 👨‍💻</h2>
-      <div class="flex flex-col gap-4 items-center">
-        <p class="text-[0.825rem] leading-[1.2rem] font-thin">Recorre los trabajos que he realizado hasta el momento con mucho esfuerzo y dedicación.</p>
+      <div class="flex flex-col gap-3 items-center">
+        <p class="text-sm desktop:text-xs xlscreens:text-sm xlscreens:leading-4 font-thin">Recorre los trabajos que he realizado hasta el momento con mucho esfuerzo y dedicación.</p>
         <LinkBtn href="/proyectos" content="Ver proyectos" styles="text-sm flex items-center gap-2 border border-[#3993DD] py-2 px-8 rounded-lg hover:bg-[#51a1e2]/20 hover:border-[#FE9000] hover:text-[#FE9000] transition-all ease-in-out duration-300">
           <Icon icon="ArrowRight" slot="iconR" width="20"/>
         </LinkBtn>
@@ -119,16 +119,16 @@ const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hov
     >
       <h2 class="text-lg">Tecnologias 🔧</h2>
       <div class="flex flex-wrap gap-3">
-        <Icon icon="HTMLLogo"  title="HTML"/>
-        <Icon icon="CSSLogo"  title="CSS"/>
-        <Icon icon="JavaScriptLogo"  title="JavaScript"/>
-        <Icon icon="ReactLogo"  title="React"/>
-        <Icon icon="AstroLogo"  title="Astro"/>
-        <Icon icon="NodeJSLogo"  title="Node"/>
-        <Icon icon="ExpressLogo"  title="Express"/>
-        <Icon icon="MongoDB"  title="MongoDB"/>
-        <Icon icon="HandleBars"  title="HandleBars"/>
-        <Icon icon="NextJS"  title="Next"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="HTMLLogo"  title="HTML"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="CSSLogo"  title="CSS"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="JavaScriptLogo"  title="JavaScript"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="ReactLogo"  title="React"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="AstroLogo"  title="Astro"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="NodeJSLogo"  title="Node"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="ExpressLogo"  title="Express"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="MongoDB"  title="MongoDB"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="HandleBars"  title="HandleBars"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="NextJS"  title="Next"/>
       </div>
     </section>
     <section
