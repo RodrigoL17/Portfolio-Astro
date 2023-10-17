@@ -4,14 +4,14 @@ import LinkBtn from "../components/LinkBtn.astro";
 import TimeZone from "../components/TimeZone.astro";
 import Layout from "../layouts/Layout.astro";
 
-const commonStyles =
+export const commonStyles =
   "bg-[#3993DD]/10 border border-[#3993DD] rounded-xl p-4  hover:border-[#FE9000]  transition-all ease-in-out duration-300 tablet:animate-fade-up tablet:animate-duration-[1000ms] tablet:animate-ease-in-out tablet:animate-fill-both";
-const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hover:bg-[#51a1e2]/20 hover:border-[#FE9000] hover:text-[#FE9000] transition-all ease-in-out duration-300"  
+export const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hover:bg-[#51a1e2]/20 hover:border-[#FE9000] hover:text-[#FE9000] transition-all ease-in-out duration-300"  
 ---
 
 <Layout title="Rodrigo Lezama - Portfolio">
 <main
-    class="flex-col flex slaptop:grid slaptop:grid-cols-4 slaptop:grid-rows-6 desktop:grid-rows-4 desktop:h-screen min-h-screen  min-w-screen  desktop:p-10  p-6 gap-4 justify-center text-white tracking-wider"
+    class="flex-col flex slaptop:grid slaptop:grid-cols-4 slaptop:grid-rows-6 desktop:grid-rows-4 p-6 gap-4 justify-center text-white tracking-wider"
   >
     <section
       id="hero-section"
@@ -34,7 +34,7 @@ const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hov
             title="GitHub Repository"
             styles={btnStyles}
           >
-            <Icon slot="icon" icon="GitHubLogo" width="24" />
+            <Icon slot="icon" icon="GitHub" width="24" />
           </LinkBtn>
           <LinkBtn
             href="https://www.linkedin.com/in/rodrigo-lezama/"
@@ -43,7 +43,7 @@ const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hov
             title="Linkedin profile"
             styles={btnStyles}
           >
-            <Icon slot="icon" icon="LinkedinLogo" width="24" />
+            <Icon slot="icon" icon="Linkedin" width="24" />
           </LinkBtn>
           <LinkBtn
             href="/RodrigoLezama-DesarrolladorWebFullStack.pdf"
@@ -119,13 +119,13 @@ const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hov
     >
       <h2 class="text-lg">Tecnologias 🔧</h2>
       <div class="flex flex-wrap gap-3">
-        <Icon styles="desktop:w-5 xlscreens:w-6" icon="HTMLLogo"  title="HTML"/>
-        <Icon styles="desktop:w-5 xlscreens:w-6" icon="CSSLogo"  title="CSS"/>
-        <Icon styles="desktop:w-5 xlscreens:w-6" icon="JavaScriptLogo"  title="JavaScript"/>
-        <Icon styles="desktop:w-5 xlscreens:w-6" icon="ReactLogo"  title="React"/>
-        <Icon styles="desktop:w-5 xlscreens:w-6" icon="AstroLogo"  title="Astro"/>
-        <Icon styles="desktop:w-5 xlscreens:w-6" icon="NodeJSLogo"  title="Node"/>
-        <Icon styles="desktop:w-5 xlscreens:w-6" icon="ExpressLogo"  title="Express"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="HTML"  title="HTML"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="CSS"  title="CSS"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="JavaScript"  title="JavaScript"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="React"  title="React"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="Astro"  title="Astro"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="NodeJS"  title="Node"/>
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="Express"  title="Express"/>
         <Icon styles="desktop:w-5 xlscreens:w-6" icon="MongoDB"  title="MongoDB"/>
         <Icon styles="desktop:w-5 xlscreens:w-6" icon="HandleBars"  title="HandleBars"/>
         <Icon styles="desktop:w-5 xlscreens:w-6" icon="NextJS"  title="Next"/>

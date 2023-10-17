@@ -1,25 +1,44 @@
 ---
+import ProjectCard from "../components/ProjectCard.astro";
+import { PROJECTS } from "../const/projects";
 import Layout from "../layouts/Layout.astro";
+import type { Projects } from "../types";
 ---
 
 <Layout title="Rodrigo Lezama - Proyectos">
-  <main class="py-14 px-20 min-h-screen flex flex-col gap-10">
-    <h1 class="text-white text-7xl font-bold">Proyectos</h1>
-    <section
-      class=" gap-4 border border-[#3993DD] p-4 rounded-lg overflow-y-auto"
-    >
-    <div id="card" class="relative transform transition-transform duration-700 ease-in-out">
-        <div  class="absolute h-full w-full bg-gradient-to-b from-black/80 via-black/30 to-white/20 z-10 rounded-lg">
-        </div>
-        <p class="absolute p-2 w-full z-10 text-white">Proyectoreact</p>
-        <img class="rounded-lg" src="/ecommerceReact.png" alt="" />
-      </div>
-      <div class="relative transform transition-transform duration-700 ease-in-out">
-        <div class="absolute h-full w-full bg-gradient-to-b from-black/80 via-black/30 to-white/20 z-10 rounded-lg">
-        </div>
-        <p class="absolute p-2 w-full z-10 text-white">Proyectoreact</p>
-        <img class="rounded-lg" src="/ecommerceReact.png" alt="" />
-      </div>
+<main class="h-full grid grid-cols-5 grid-rows-6">
+    <h1 class="text-white text-5xl py-6 px-4 col-span-5 row-span-1 flex items-center leading-none">Proyectos</h1>
+    <aside class="col-span-1 row-span-5 border p-4">
+      <h2>filtros</h2>
+    </aside>
+    <section class="overflow-y-auto col-span-4 row-span-5 border  px-8 py-6 flex flex-col gap-6 ">
+    {PROJECTS.map(({title, description, imgUrl, tecnologies , gitHubLink,urlLink }) : Projects => <ProjectCard title={title} description={description} imgUrl={imgUrl} tecnologies={tecnologies} , gitHubLink={gitHubLink} urlLink={urlLink}/>)}
     </section>
   </main>
+
 </Layout>
+
+<style>
+section::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Define the thumb style */
+section::-webkit-scrollbar-thumb {
+  background: #191f31;
+  border-radius: 4px;
+}
+
+/* Define the track style */
+section::-webkit-scrollbar-track {
+  background-color: #25385f;
+
+}
+
+
+section {
+  scrollbar-track-color: #25385f;
+  scrollbar-thumb: #191f31;
+  scrollbar-width: 8px;
+}
+</style>
