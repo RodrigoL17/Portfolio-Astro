@@ -1,35 +1,22 @@
 <p class="text-3xl">
-  <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+  <span id="clock"></span>
 </p>
 <script>
-  const Start = new Date();
-  const hours = document.getElementById("hours");
-  const minutes = document.getElementById("minutes");
-  const seconds = document.getElementById("seconds");
-  const timeZoneoffset = 3;
-  const startDif = Start.getUTCHours() - timeZoneoffset;
-  hours.innerHTML =
-    startDif < 10 ? `0${startDif.toString()}` : startDif.toString();
-  minutes.innerHTML =
-    Start.getMinutes() < 10
-      ? `0${Start.getMinutes().toString()}`
-      : Start.getMinutes().toString();
-  seconds.innerHTML =
-    Start.getSeconds() < 10
-      ? `0${Start.getSeconds().toString()}`
-      : Start.getSeconds().toString();
-  setInterval(() => {
-    const d = new Date();
-    let hoursdif = d.getUTCHours() - timeZoneoffset;
-    seconds.innerHTML =
-      d.getSeconds() < 10
-        ? `0${d.getSeconds().toString()}`
-        : d.getSeconds().toString();
-    minutes.innerHTML =
-      d.getMinutes() < 10
-        ? `0${d.getMinutes().toString()}`
-        : d.getMinutes().toString();
-    hours.innerHTML =
-      hoursdif < 10 ? `0${hoursdif.toString()}` : hoursdif.toString();
-  }, 1000);
+ function updateClock() {
+    const timeZoneOffset = 3;
+    const now = new Date();
+    const getHours = () => {
+      if (now.getUTCHours() < timeZoneOffset) {
+        return now.getUTCHours() + 24 - timeZoneOffset;
+      }
+      return now.getUTCHours() - timeZoneOffset;
+    }
+    const hours = getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
 </script>
