@@ -11,18 +11,18 @@ export const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded
 
 <Layout title="Rodrigo Lezama - Portfolio">
 <main
-    class="flex-col flex slaptop:grid slaptop:grid-cols-4 slaptop:grid-rows-6 desktop:grid-rows-4 p-6 gap-4 justify-center text-white tracking-wider"
+    class="flex-col flex slaptop:grid slaptop:grid-cols-4 slaptop:grid-rows-6 desktop:grid-rows-4 desktop:max-h-screen xlscreens:max-w-[1400px] xlscreens:mx-auto p-6 gap-4 justify-center text-white tracking-wider"
   >
     <section
       id="hero-section"
       class={`slaptop:col-span-2 desktop:col-span-3 slaptop:row-span-2 ${commonStyles} flex tablet:animate-delay-150`}
     >
-      <div class="flex flex-col gap-10 tablet:gap-20 flex-1 justify-between">
+      <div class="relative flex flex-col gap-20 flex-1 justify-between">
         <div class="font-thin">
           <span class="text-sm italic font-thin text-slate-400">Bienvenido</span
           >
           <h1 class="text-2xl tracking-wide">
-            Hola 👋, Soy <span class="font-bold">Rodrigo Lezama</span>
+            Hola<span class="tablet:hidden">👋</span>, Soy <span class="font-bold">Rodrigo Lezama</span>
           </h1>
           <p class="text-lg">Desarrollador Full-Stack</p>
         </div>
@@ -57,10 +57,10 @@ export const btnStyles = "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded
         </div>
       </div>
 
-      <img id="avatar-img" class="max-desktop:hidden" src="/profile.webp" width="200" alt="Avatar picture" />
+      <img class="max-tablet:hidden tablet:absolute tablet:right-0 tablet:bottom-0  tablet:opacity-30 tablet:-z-10 desktop:opacity-100  desktop:z-0 desktop:static object-contain desktop:mr-20" src="/memoji.webp" width="250" height="250" alt="Avatar picture" />
     </section>
     <section
-      class={`slaptop:col-span-2 slaptop:row-span-3 desktop:col-span-1 desktop:row-span-3 ${commonStyles} text-sm slaptop:text-base desktop:text-xs xlscreens:text-sm xlscreens:leading-5 flex flex-col gap-4 font-thin tablet:animate-delay-300 `}
+      class={`slaptop:col-span-2 slaptop:row-span-3 desktop:col-span-1 desktop:row-span-3 ${commonStyles} text-sm slaptop:text-base desktop:text-xs xlscreens:leading-[1.1rem] flex flex-col gap-4 font-thin tablet:animate-delay-300 `}
     >
       <h2 class="text-lg font-bold">Acerca de mi 👨‍💼</h2>
       <p>
