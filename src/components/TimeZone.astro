@@ -2,20 +2,27 @@
   <span id="clock"></span>
 </p>
 <script>
- function updateClock() {
-    const timeZoneOffset = 3;
-    const now = new Date();
-    const getHours = () => {
-      if (now.getUTCHours() < timeZoneOffset) {
-        return now.getUTCHours() + 24 - timeZoneOffset;
-      }
-      return now.getUTCHours() - timeZoneOffset;
-    }
-    const hours = getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
+  const getHours = (now: Date, timeZoneOffset: number): number => {
+    return now.getUTCHours() < timeZoneOffset
+      ? now.getUTCHours() + 24 - timeZoneOffset
+      : now.getUTCHours() - timeZoneOffset;
+  };
 
-    document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+  const convertToString = (value: number): string => {
+    return `${value}`.padStart(2, "0");
+  };
+
+  function updateClock() {
+    const now = new Date();
+    const timeZoneOffset = 3;
+
+    const hours = convertToString(getHours(now, timeZoneOffset));
+    const minutes = convertToString(now.getMinutes());
+    const seconds = convertToString(now.getSeconds());
+
+    document.getElementById(
+      "clock"
+    ).textContent = `${hours}:${minutes}:${seconds}`;
   }
   updateClock();
   setInterval(updateClock, 1000);
