@@ -2,15 +2,13 @@
 import { IconsPaths, ViewBoxes } from "./IconsPath";
 
 interface Props {
-  icon: keyof typeof IconsPaths;
+  icon?: keyof typeof IconsPaths;
   fill?: string;
   width?: string;
   height?: string;
   styles?: string;
   title?: string;
 }
-
-
 
 const {
   icon,

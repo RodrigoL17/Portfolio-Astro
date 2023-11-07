@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 interface Props {
 	title: string
 }
@@ -16,7 +15,6 @@ const { title } = Astro.props as Props
 		<link rel="icon" type="image/png" href="/logo.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions/>
 	</head>
 	<body class="font-primary bg-[#222E50] h-screen w-full">
 		<slot />
@@ -29,4 +27,25 @@ const { title } = Astro.props as Props
 		padding: 0;
 		margin: 0;
 	}
+
+	#scrollbar-section::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Define the thumb style */
+  #scrollbar-section::-webkit-scrollbar-thumb {
+    background: #191f31;
+    border-radius: 4px;
+  }
+
+  /* Define the track style */
+  #scrollbar-section::-webkit-scrollbar-track {
+    background-color: #25385f;
+  }
+
+  #scrollbar-section {
+    scrollbar-track-color: #25385f;
+    scrollbar-thumb: #191f31;
+    scrollbar-width: 8px;
+  }
 </style>

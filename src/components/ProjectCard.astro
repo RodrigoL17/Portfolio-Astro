@@ -23,7 +23,7 @@ const { title, imgUrl, tecnologies, description, gitHubLink, urlLink } =
     <ul class="flex gap-3">
       {
         tecnologies.map((tec: keyof typeof IconsPaths) => (
-          <Icon slot="icon" icon={tec} width="24" />
+          <Icon icon={tec} width="24" />
         ))
       }
     </ul>

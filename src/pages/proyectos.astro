@@ -1,64 +1,31 @@
 ---
-import ProjectCard from "../components/ProjectCard.astro";
-import { PROJECTS } from "../const/projects";
+import Projects from "../components/Projects";
 import Layout from "../layouts/Layout.astro";
-import type { Projects } from "../types";
-
-
-
-const allTecs = PROJECTS.map ((project) => {
-return project.tecnologies
-})
-const flattedAllTecs = allTecs.flat()
-const filteredTecs = [...new Set(flattedAllTecs)]
 ---
 
 <Layout title="Rodrigo Lezama - Proyectos">
-<main class="h-full grid grid-cols-5 grid-rows-6">
-    <h1 class="text-white text-5xl py-6 px-4 col-span-5 row-span-1 flex items-center leading-none">Proyectos</h1>
-    <aside class="col-span-1 row-span-5 border p-4">
-      <form class="flex flex-col" action="">
-        <input type="text" id="search" />
-        <label for="tecnologies">tecnologias</label>
-        {filteredTecs.map(tec => {
-          return (
-            <div class="flex items-center w-full justify-between">
-            <label>{tec.toLocaleUpperCase()}</label>
-            <input type="checkbox" name="tecnologies" id={tec} value={tec}>
-            </div>
-          )
-        })}
-      </form>
-    </aside>
-    <section class="overflow-y-auto col-span-4 row-span-5 border  px-8 py-6 flex flex-col gap-6 ">
-    {PROJECTS.map(({title, description, imgUrl, tecnologies , gitHubLink,urlLink }) : Projects => <ProjectCard title={title} description={description} imgUrl={imgUrl} tecnologies={tecnologies} , gitHubLink={gitHubLink} urlLink={urlLink}/>)}
-    </section>
-  </main>
-
+  <Projects client:only="react" />
 </Layout>
 
 <style>
-section::-webkit-scrollbar {
-  width: 8px;
-}
+  section::-webkit-scrollbar {
+    width: 8px;
+  }
 
-/* Define the thumb style */
-section::-webkit-scrollbar-thumb {
-  background: #191f31;
-  border-radius: 4px;
-}
+  /* Define the thumb style */
+  section::-webkit-scrollbar-thumb {
+    background: #191f31;
+    border-radius: 4px;
+  }
 
-/* Define the track style */
-section::-webkit-scrollbar-track {
-  background-color: #25385f;
+  /* Define the track style */
+  section::-webkit-scrollbar-track {
+    background-color: #25385f;
+  }
 
-}
-
-
-section {
-  scrollbar-track-color: #25385f;
-  scrollbar-thumb: #191f31;
-  scrollbar-width: 8px;
-}
+  section {
+    scrollbar-track-color: #25385f;
+    scrollbar-thumb: #191f31;
+    scrollbar-width: 8px;
+  }
 </style>
-
