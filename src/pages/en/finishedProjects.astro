@@ -1,0 +1,37 @@
+---
+import Projects from "../../components/Projects";
+import Layout from "../../layouts/Layout.astro";
+import type { lenguages } from "../../types";
+
+
+const {pathname} = Astro.url
+const lenguage = pathname.split("/")[1] as lenguages
+
+---
+
+<Layout title="Rodrigo Lezama - Proyectos">
+  <Projects client:only="react" lenguage={lenguage}/>
+</Layout>
+
+<style>
+  section::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Define the thumb style */
+  section::-webkit-scrollbar-thumb {
+    background: #191f31;
+    border-radius: 4px;
+  }
+
+  /* Define the track style */
+  section::-webkit-scrollbar-track {
+    background-color: #25385f;
+  }
+
+  section {
+    scrollbar-track-color: #25385f;
+    scrollbar-thumb: #191f31;
+    scrollbar-width: 8px;
+  }
+</style>

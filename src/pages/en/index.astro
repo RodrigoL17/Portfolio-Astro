@@ -1,0 +1,195 @@
+---
+import Icon from "../../components/Icon.astro";
+import LinkBtn from "../../components/LinkBtn.astro";
+import TimeZone from "../../components/TimeZone.astro";
+import Layout from "../../layouts/Layout.astro";
+import Lenguage from "../../components/Lenguage.astro";
+
+export const commonStyles =
+  "bg-[#3993DD]/10 border border-[#3993DD] rounded-xl p-4  hover:border-[#FE9000]  transition-all ease-in-out duration-300 tablet:animate-fade-up tablet:animate-duration-[1000ms] tablet:animate-ease-in-out tablet:animate-fill-both";
+export const btnStyles =
+  "border border-[#3993DD] py-2 px-6 slaptop:px-8 rounded-lg hover:bg-[#51a1e2]/20 hover:border-[#FE9000] hover:text-[#FE9000] transition-all ease-in-out duration-300";
+---
+
+<Layout title="Rodrigo Lezama - Portfolio">
+  <main
+    class="flex-col flex slaptop:grid slaptop:grid-cols-4 slaptop:grid-rows-6 desktop:grid-rows-4 desktop:max-h-screen xlscreens:max-w-[1400px] xlscreens:mx-auto p-6 gap-4 justify-center text-white tracking-wider"
+  >
+    <section
+      id="hero-section"
+      class={`slaptop:col-span-2 desktop:col-span-3 slaptop:row-span-2 ${commonStyles} flex tablet:animate-delay-150`}
+    >
+      <div class="relative flex flex-col gap-20 flex-1 justify-between">
+        <div class="font-thin">
+          <div class="flex gap-4 items-center">
+            <span class="text-sm italic font-thin text-slate-400">Bienvenido</span
+              ><Lenguage/>
+          </div>
+          <h1 class="text-2xl tracking-wide">
+            Hello<span class="tablet:hidden">👋</span>, I'm <span
+              class="font-bold">Rodrigo Lezama</span
+            >
+          </h1>
+          <p class="text-lg">Full-Stack Developer</p>
+        </div>
+        <div class="flex w-full items-center gap-4">
+          <LinkBtn
+            href="https://github.com/RodrigoL17?tab=repositories"
+            target="_blank"
+            ariaLabel="Link to GitHub Repository"
+            title="GitHub Repository"
+            styles={btnStyles}
+          >
+            <Icon slot="icon" icon="GitHub" width="24" />
+          </LinkBtn>
+          <LinkBtn
+            href="https://www.linkedin.com/in/rodrigo-lezama/"
+            target="_blank"
+            ariaLabel="Link to Linkedin profile"
+            title="Linkedin profile"
+            styles={btnStyles}
+          >
+            <Icon slot="icon" icon="Linkedin" width="24" />
+          </LinkBtn>
+          <LinkBtn
+            href="/RodrigoLezama-DesarrolladorWebFullStack.pdf"
+            filename="RodrigoLezamaProfile"
+            ariaLabel="Download profile file"
+            title="Download CV"
+            styles={btnStyles}
+          >
+            <Icon slot="icon" icon="DownloadFile" width="24" />
+          </LinkBtn>
+        </div>
+      </div>
+
+      <img
+        class="max-tablet:hidden tablet:absolute tablet:right-0 tablet:bottom-0 tablet:opacity-30 tablet:-z-10 desktop:opacity-100 desktop:z-0 desktop:static object-contain desktop:mr-20"
+        src="/memoji.webp"
+        width="250"
+        height="250"
+        alt="Avatar picture"
+      />
+    </section>
+    <section
+      class={`slaptop:col-span-2 slaptop:row-span-3 desktop:col-span-1 desktop:row-span-3 ${commonStyles} text-sm slaptop:text-base desktop:text-xs xlscreens:leading-[1.1rem] flex flex-col gap-4 font-thin tablet:animate-delay-300 `}
+    >
+      <h2 class="text-lg font-bold">About me 👨‍💼</h2>
+      <p>
+        Originally from Argentina, specifically from the City of Buenos Aires, I
+        am 32 years old. Although I have specialized in full-stack development,
+        I have a special passion for front-end.
+      </p>
+      <div class="flex flex-col gap-2">
+        <p>My favourite technologies are:</p>
+        <ul class="list-disc px-4">
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Tailwind</li>
+          <li>Astro</li>
+          <li>NextJS</li>
+        </ul>
+      </div>
+      <p>
+        Despite having preferences, I always choose the right technology for
+        each project.
+      </p>
+      <p>
+        In addition to programming, one of my favorite activities is Olympic
+        weightlifting. My aspiration is to compete in this sport someday 🏋️‍♂️.
+      </p>
+    </section>
+    <section
+      class={`slaptop:row-span-2 slaptop:col-span-2 desktop:col-span-1 desktop:row-span-2 flex flex-col gap-8 slaptop:gap-3 desktop:gap-8 ${commonStyles} tablet:animate-delay-500`}
+    >
+      <h2 class="text-lg whitespace-pre-wrap">Let's build a project 🚀</h2>
+      <div class="flex-col flex gap-2">
+        <span class="text-sm italic font-thin text-slate-400"
+          >Contact details</span
+        >
+        <a
+          class="font-thin desktop:text-sm xlscreens:text-base"
+          href="mailto:cordolezama@gmail.com">cordolezama@gmail.com</a
+        >
+      </div>
+      <div class="flex-col flex">
+        <span class="text-sm italic font-thin text-slate-400">Socials</span>
+      </div>
+    </section>
+    <section
+      class={`slaptop:row-span-1 slaptop:col-span-2 desktop:col-span-2 desktop:row-span-1 ${commonStyles} flex flex-col gap-4 tablet:animate-delay-700`}
+    >
+      <h2 class="text-lg">Projects 👨‍💻</h2>
+      <div class="flex flex-col gap-3 items-center">
+        <p
+          class="text-sm desktop:text-xs xlscreens:text-sm xlscreens:leading-4 font-thin"
+        >
+          Review the work I have done so far with a lot of effort and
+          dedication.
+        </p>
+        <LinkBtn
+          href="/en/finishedProjects"
+          content="Review projects"
+          styles="text-sm flex items-center gap-2 border border-[#3993DD] py-2 px-8 rounded-lg hover:bg-[#51a1e2]/20 hover:border-[#FE9000] hover:text-[#FE9000] transition-all ease-in-out duration-300"
+        >
+          <Icon icon="ArrowRight" slot="iconR" width="20" />
+        </LinkBtn>
+      </div>
+    </section>
+    <section
+      class={`slaptop:row-span-1 slaptop:col-span-2 desktop:col-span-1 desktop:row-span-1 ${commonStyles} flex flex-col gap-4 tablet:animate-delay-[900ms]`}
+    >
+      <h2 class="text-lg">Technologies 🔧</h2>
+      <div class="flex flex-wrap gap-3">
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="HTML" title="HTML" />
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="CSS" title="CSS" />
+        <Icon
+          styles="desktop:w-5 xlscreens:w-6"
+          icon="JavaScript"
+          title="JavaScript"
+        />
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="React" title="React" />
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="Astro" title="Astro" />
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="NodeJS" title="Node" />
+        <Icon
+          styles="desktop:w-5 xlscreens:w-6"
+          icon="Express"
+          title="Express"
+        />
+        <Icon
+          styles="desktop:w-5 xlscreens:w-6"
+          icon="MongoDB"
+          title="MongoDB"
+        />
+        <Icon
+          styles="desktop:w-5 xlscreens:w-6"
+          icon="HandleBars"
+          title="HandleBars"
+        />
+        <Icon styles="desktop:w-5 xlscreens:w-6" icon="NextJS" title="Next" />
+      </div>
+    </section>
+    <section
+      class={`col-span-1 row-span-1 ${commonStyles} flex flex-col gap-4 tablet:animate-delay-[1000ms]`}
+    >
+      <h2 class="flex gap-4 items-center text-lg">
+        Status <span
+          class="border border-green-800 rounded-full w-3 h-3 bg-green-400 flex items-center justify-center"
+          ><span
+            class="absolute border border-green-800 rounded-full w-3 h-3 bg-green-400 animate-ping duration-200"
+          ></span></span
+        >
+      </h2>
+      <p class="font-thin">Available for offers</p>
+    </section>
+    <section
+      class={`col-span-1 row-span-1 ${commonStyles} flex flex-col gap-4 tablet:animate-delay-[1100ms]`}
+    >
+      <dir>
+        <h2 class="text-lg">Time Zone ⌛</h2>
+        <span class="text-sm italic font-thin text-slate-400">(UTC-03:00)</span>
+      </dir>
+      <TimeZone />
+    </section>
+  </main>
+</Layout>

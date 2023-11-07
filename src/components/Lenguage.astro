@@ -1,0 +1,12 @@
+---
+import LinkBtn from "./LinkBtn.astro";
+import Icon from "./Icon.astro";
+---
+<span class="text-sm flex gap-1 text-gray-400 items-center"><LinkBtn href="/en" title="English" ariaLabel="English" content="En" styles="flex gap-1 items-center">
+    <Icon icon="UsFlag" slot="iconR" width="14" styles="rounded-xl"/>
+</LinkBtn>
+<span class="text-lg">|</span>
+<LinkBtn href="/" title="Español" ariaLabel="Español" content="Es" styles="flex gap-1 items-center">
+<Icon icon="SpainFlag" slot="icon" width="14" styles="rounded-xl"/>
+</LinkBtn>
+</span>

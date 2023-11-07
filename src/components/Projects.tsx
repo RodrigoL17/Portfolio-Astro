@@ -1,13 +1,14 @@
 import ProjectCard from "./ProjectCard.tsx";
 import { useState } from "react";
 import type { Projects } from "../types";
+import type { lenguages } from "../types";
 import { useGetTechs } from "../hooks/useGetTechs";
 import { PROJECTS } from "../const/projects";
 import { btnStyles } from "../pages/index.astro";
 import Icon from "./Icon.tsx";
 import LinkBtn from "./LinkBtn.tsx";
 
-export default function Projects() {
+export default function Projects({ lenguage = "es" }: { lenguage: lenguages }) {
   const initialState = PROJECTS;
   const filteredTechs = useGetTechs();
   const [projects, setProjects] = useState<Projects[]>(initialState);
@@ -48,17 +49,28 @@ export default function Projects() {
 
   return (
     <main className="h-full grid grid-cols-9 grid-rows-6 text-white">
-      <LinkBtn styles="absolute top-12 left-6" href="/" ariaLabel="Home" title="Inicio"><Icon icon="Home" width="32"/></LinkBtn>
+      <LinkBtn
+        styles="absolute top-12 left-6"
+        href={lenguage === "en" ? "/en" : "/"}
+        ariaLabel="Home"
+        title="Inicio"
+      >
+        <Icon icon="Home" width="32" />
+      </LinkBtn>
       <h1 className="text-5xl col-span-10 row-span-1 leading-none text-center self-center">
-        Proyectos
+        {lenguage === "en" ? "Projects" : "Proyectos"}
       </h1>
       <aside className="col-span-2 row-span-5 px-6 py-6">
         <form onSubmit={handleSubmit} className="flex flex-col gap-6" action="">
           <div className="flex flex-col gap-4">
-            <label htmlFor="search" className="uppercase">Busqueda</label>
+            <label htmlFor="search" className="uppercase">
+              {lenguage === "en" ? "Search" : "Buscar"}
+            </label>
             <input className="text-black py-1 px-2" type="text" id="search" />
           </div>
-          <label className="uppercase">tecnologias</label>
+          <label className="uppercase">
+            {lenguage === "en" ? "Technologies" : "Tecnologías"}
+          </label>
           <div className="flex flex-col gap-2">
             {filteredTechs.map((tec) => {
               return (
@@ -72,7 +84,9 @@ export default function Projects() {
               );
             })}
           </div>
-          <button className={btnStyles}>Buscar</button>
+          <button className={btnStyles}>
+            {lenguage === "en" ? "Search" : "Buscar"}
+          </button>
         </form>
       </aside>
       <section
@@ -90,13 +104,14 @@ export default function Projects() {
           }) => {
             return (
               <ProjectCard
-                key={title}
+                key={title[lenguage]}
                 title={title}
                 description={description}
                 imgUrl={imgUrl}
                 tecnologies={tecnologies}
                 gitHubLink={gitHubLink}
                 urlLink={urlLink}
+                lenguage={lenguage}
               />
             );
           }
