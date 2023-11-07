@@ -78,7 +78,7 @@ export default function Projects({ lenguage = "es" }: { lenguage: lenguages }) {
                   key={tec}
                   className="flex items-center w-full justify-between"
                 >
-                  <label htmlFor={tec}>{tec}</label>
+                  <label className="cursor-pointer" htmlFor={tec}>- {tec}</label>
                   <input type="checkbox" name={tec} id={tec} value={tec} />
                 </div>
               );
@@ -93,7 +93,7 @@ export default function Projects({ lenguage = "es" }: { lenguage: lenguages }) {
         id="scrollbar-section"
         className="overflow-y-auto col-span-7 row-span-5 px-20 py-6 flex flex-col gap-6 "
       >
-        {projects.map(
+        {projects.length >0 ? projects.map(
           ({
             title,
             description,
@@ -115,7 +115,11 @@ export default function Projects({ lenguage = "es" }: { lenguage: lenguages }) {
               />
             );
           }
-        )}
+        ):
+          <div className="text-center text-2xl flex flex-col gap-8 items-center">
+            <Icon icon="SadEmoji" width="80" />
+            {lenguage === "en" ? "No projects found" : "No hay proyectos"}
+          </div>}
       </section>
     </main>
   );
