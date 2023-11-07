@@ -13,9 +13,9 @@ export default function Projects({ lenguage = "es" }: { lenguage: lenguages }) {
   const filteredTechs = useGetTechs();
   const [projects, setProjects] = useState<Projects[]>(initialState);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const [search, ...checkboxes] = e.target;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const [search, ...checkboxes] = event.target;
     const checkedboxes: HTMLInputElement[] = checkboxes.filter(
       (checkbox: HTMLInputElement) => checkbox.checked === true
     );
@@ -27,7 +27,7 @@ export default function Projects({ lenguage = "es" }: { lenguage: lenguages }) {
     if (search.value !== "" || checkedboxes.length > 0) {
       filteredProjects = filteredProjects.filter((project) => {
         // Filtro por cadena de búsqueda
-        const matchesSearch = project.title
+        const matchesSearch = project.title[lenguage]
           .toLowerCase()
           .includes(search.value.toLowerCase());
         console.log("matchesSearch", matchesSearch);
